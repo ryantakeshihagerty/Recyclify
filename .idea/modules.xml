@@ -7,6 +7,8 @@
       <module fileurl="file://$PROJECT_DIR$/app/LAHacks-master-app.iml" filepath="$PROJECT_DIR$/app/LAHacks-master-app.iml" group="LAHacks-master/app" />
       <module fileurl="file://$PROJECT_DIR$/LAHacks_2020-master.iml" filepath="$PROJECT_DIR$/LAHacks_2020-master.iml" group="LAHacks_2020-master" />
       <module fileurl="file://$PROJECT_DIR$/app/LAHacks_2020-master-app.iml" filepath="$PROJECT_DIR$/app/LAHacks_2020-master-app.iml" group="LAHacks_2020-master/app" />
+      <module fileurl="file://$PROJECT_DIR$/Recyclify.iml" filepath="$PROJECT_DIR$/Recyclify.iml" group="Recyclify" />
+      <module fileurl="file://$PROJECT_DIR$/app/Recyclify-app.iml" filepath="$PROJECT_DIR$/app/Recyclify-app.iml" group="Recyclify/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="CurrentPlaceDetailsOnMap/app" />
     </modules>
   </component>
