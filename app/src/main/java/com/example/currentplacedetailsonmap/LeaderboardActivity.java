@@ -1,10 +1,14 @@
 package com.example.currentplacedetailsonmap;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.PopupMenu;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -15,7 +19,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class LeaderboardActivity extends Activity {
+public class LeaderboardActivity extends Activity implements PopupMenu.OnMenuItemClickListener {
     ListView listView;
 
     public void onCreate(Bundle savedInstanceState) {
@@ -24,6 +28,30 @@ public class LeaderboardActivity extends Activity {
 
         listView = findViewById(R.id.listView);
         downloadJSON("https://ineedtophp.000webhostapp.com/view_leaderboard.php");
+    }
+
+    public void showPopup(View v) {
+        PopupMenu popup = new PopupMenu(this, v);
+        popup.setOnMenuItemClickListener((PopupMenu.OnMenuItemClickListener) this);
+        popup.inflate(R.menu.profile_menu);
+        popup.show();
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.option_get_place:
+                startActivity(new Intent( this, MapsActivityCurrentPlace.class));
+                return true;
+            case R.id.nav_profile:
+                startActivity(new Intent(this, ProfileActivity.class));
+                return true;
+            case R.id.nav_share:
+                startActivity(new Intent(this, ShareActivity.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     private void downloadJSON(final String webURL) {

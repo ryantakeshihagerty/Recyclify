@@ -13,8 +13,7 @@ public class ProfileActivity extends Activity implements PopupMenu.OnMenuItemCli
         setContentView(R.layout.activity_profile);
     }
 
-    public void showPopup(View v)
-    {
+    public void showPopup(View v) {
         PopupMenu popup = new PopupMenu(this, v);
         popup.setOnMenuItemClickListener(this);
         popup.inflate(R.menu.profile_menu);

@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.time.format.DateTimeFormatter;
 
-public class ShareActivity extends Activity {
+public class ShareActivity extends Activity implements PopupMenu.OnMenuItemClickListener {
     EditText moneyInput;
     Button submitButton;
 
@@ -61,6 +61,7 @@ public class ShareActivity extends Activity {
         popup.show();
     }
 
+    @Override
     public boolean onMenuItemClick(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.option_get_place:
@@ -73,7 +74,7 @@ public class ShareActivity extends Activity {
                 startActivity(new Intent(this, LeaderboardActivity.class));
                 return true;
             default:
-                return true;
+                return super.onOptionsItemSelected(item);
         }
     }
 

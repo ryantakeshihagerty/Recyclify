@@ -63,8 +63,7 @@ import java.util.List;
 /**
  * An activity that displays a map showing the place at the device's current location.
  */
-public class MapsActivityCurrentPlace extends AppCompatActivity
-        implements OnMapReadyCallback {
+public class MapsActivityCurrentPlace extends AppCompatActivity implements OnMapReadyCallback {
 
     private static final String TAG = MapsActivityCurrentPlace.class.getSimpleName();
     private GoogleMap mMap;
