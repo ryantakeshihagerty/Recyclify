@@ -1,12 +1,15 @@
 package com.example.currentplacedetailsonmap;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.PopupMenu;
 import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import org.apache.http.HttpEntity;
@@ -49,6 +52,29 @@ public class ShareActivity extends Activity {
             }
         });
 
+    }
+
+    public void showPopup(View v) {
+        PopupMenu popup = new PopupMenu(this, v);
+        popup.setOnMenuItemClickListener((PopupMenu.OnMenuItemClickListener) this);
+        popup.inflate(R.menu.share_menu);
+        popup.show();
+    }
+
+    public boolean onMenuItemClick(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.option_get_place:
+                startActivity(new Intent(this, MapsActivityCurrentPlace.class));
+                return true;
+            case R.id.nav_profile:
+                startActivity(new Intent(this, ProfileActivity.class));
+                return true;
+            case R.id.nav_leaderboard:
+                startActivity(new Intent(this, LeaderboardActivity.class));
+                return true;
+            default:
+                return true;
+        }
     }
 
     private String getUserID() {
