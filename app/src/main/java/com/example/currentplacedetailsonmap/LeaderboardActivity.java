@@ -3,7 +3,12 @@ package com.example.currentplacedetailsonmap;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -18,12 +23,11 @@ public class LeaderboardActivity extends Activity {
         setContentView(R.layout.activity_leaderboard);
 
         listView = findViewById(R.id.listView);
-        downloadJSON("view_leaderboard.php");
+        downloadJSON("https://ineedtophp.000webhostapp.com/view_leaderboard.php");
     }
 
     private void downloadJSON(final String webURL) {
         class DownloadJSON extends AsyncTask<Void, Void, String> {
-
             @Override
             protected String doInBackground(Void... voids) {
                 try {
@@ -42,10 +46,31 @@ public class LeaderboardActivity extends Activity {
                     return null;
                 }
             }
+
+            @Override
+            protected void onPostExecute(String result) {
+                super.onPostExecute(result);
+                try {
+                    loadIntoListView(result);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         DownloadJSON dlJSON = new DownloadJSON();
         dlJSON.execute();
     }
 
-    //loadIntoListView
+    private void loadIntoListView(String jsonString) throws JSONException {
+        JSONArray jsonArray = new JSONArray(jsonString);
+        String[] output = new String[jsonArray.length()];
+        int rank = 1;
+        for (int i = 0; i < jsonArray.length(); i++) {
+            JSONObject json = jsonArray.getJSONObject(i);
+            output[i] = "#" + rank + " " + json.getString("User") + " $" + json.getString("TotalMoneyMade");
+            rank++;
+        }
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, output);
+        listView.setAdapter(arrayAdapter);
+    }
 }

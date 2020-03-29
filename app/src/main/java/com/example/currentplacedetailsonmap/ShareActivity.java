@@ -110,7 +110,7 @@ public class ShareActivity extends Activity {
 
                 try {
                     HttpClient httpClient = new DefaultHttpClient();
-                    HttpPost httpPost = new HttpPost("https://ineedtophp.000webhostapp.com/insertData.php");
+                    HttpPost httpPost = new HttpPost("https://ineedtophp.000webhostapp.com/insert_data.php");
                     httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
                     HttpResponse httpResponse = httpClient.execute(httpPost);
                     HttpEntity httpEntity = httpResponse.getEntity();
