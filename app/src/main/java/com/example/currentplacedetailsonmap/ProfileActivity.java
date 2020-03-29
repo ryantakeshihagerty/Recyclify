@@ -7,8 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.PopupMenu;
 
-public class ProfileActivity extends Activity implements PopupMenu.OnMenuItemClickListener
-{
+public class ProfileActivity extends Activity implements PopupMenu.OnMenuItemClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
@@ -24,8 +23,7 @@ public class ProfileActivity extends Activity implements PopupMenu.OnMenuItemCli
 
     @Override
     public boolean onMenuItemClick(MenuItem item) {
-        switch (item.getItemId())
-        {
+        switch (item.getItemId()) {
             case R.id.option_get_place:
                 startActivity(new Intent( this, MapsActivityCurrentPlace.class));
                 return true;
@@ -35,7 +33,8 @@ public class ProfileActivity extends Activity implements PopupMenu.OnMenuItemCli
             case R.id.nav_share:
                 startActivity(new Intent(this, ShareActivity.class));
                 return true;
-            default: return false;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 }
