@@ -1,5 +1,399 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LeaderboardActivity">
 
-</RelativeLayout>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="30dp"
+        android:layout_marginHorizontal="10dp"
+        android:background="#f1f1f1">
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Player"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Last Visited"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Total Earnings"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:text="Alice" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:text="Recycling Plant " />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="1 Million Goats"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Alice"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Recycling Plant "
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="1 Million Goats"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Alice"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Recycling Plant "
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="1 Million Goats"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Alice"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Recycling Plant "
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="1 Million Goats"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Alice"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Recycling Plant "
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="1 Million Goats"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Alice"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Recycling Plant "
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="1 Million Goats"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Alice"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Recycling Plant "
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="1 Million Goats"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Alice"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Recycling Plant "
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="1 Million Goats"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Alice"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Recycling Plant "
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="1 Million Goats"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Alice"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Recycling Plant "
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="1 Million Goats"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Alice"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Recycling Plant "
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="1 Million Goats"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+        </TableRow>
+
+    </TableLayout>
+</LinearLayout>
