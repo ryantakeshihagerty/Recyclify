@@ -6,7 +6,6 @@
     <string name="option_get_place">Get place</string>
     <string name="pick_place">Choose a place</string>
     <string name="money_input_prompt">How much money did you make from your trip?</string>
-    <string name="default_money_input">$0.00</string>
     <string name="submit_button_text">Submit</string>
     <string name="user_text">User</string>
     <string name="last_visited_text">Last visited</string>

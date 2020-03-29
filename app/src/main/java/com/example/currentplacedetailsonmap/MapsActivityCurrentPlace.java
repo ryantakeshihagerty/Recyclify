@@ -9,7 +9,6 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
 
-import android.os.StrictMode;
 //import android.util.JsonReader;
 import android.util.Log;
 import android.view.Menu;
@@ -64,7 +63,6 @@ import java.util.List;
  * An activity that displays a map showing the place at the device's current location.
  */
 public class MapsActivityCurrentPlace extends AppCompatActivity implements OnMapReadyCallback {
-
     private static final String TAG = MapsActivityCurrentPlace.class.getSimpleName();
     private GoogleMap mMap;
     private CameraPosition mCameraPosition;
@@ -101,20 +99,6 @@ public class MapsActivityCurrentPlace extends AppCompatActivity implements OnMap
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-//        if (true) {
-//            StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
-//                    .detectDiskReads()
-//                    .detectDiskWrites()
-//                    .detectNetwork()   // or .detectAll() for all detectable problems
-//                    .penaltyLog()
-//                    .build());
-//            StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
-//                    .detectLeakedSqlLiteObjects()
-//                    .detectLeakedClosableObjects()
-//                    .penaltyLog()
-//                    .penaltyDeath()
-//                    .build());
-//        }
         super.onCreate(savedInstanceState);
 
         // Retrieve location and camera position from saved instance state.
@@ -143,8 +127,6 @@ public class MapsActivityCurrentPlace extends AppCompatActivity implements OnMap
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
-
     }
 
     /**

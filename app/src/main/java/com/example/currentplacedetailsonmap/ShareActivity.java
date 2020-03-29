@@ -37,7 +37,7 @@ public class ShareActivity extends Activity implements PopupMenu.OnMenuItemClick
         setContentView(R.layout.activity_share);
 
         // Initialize widgets
-        moneyInput = findViewById(R.id.editText);
+        moneyInput = findViewById(R.id.editTextMoney);
         submitButton = findViewById(R.id.submitButton);
 
         submitButton.setOnClickListener(new View.OnClickListener() {
