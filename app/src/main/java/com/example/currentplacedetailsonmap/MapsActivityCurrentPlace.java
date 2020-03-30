@@ -1,8 +1,5 @@
 package com.example.currentplacedetailsonmap;
 
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
