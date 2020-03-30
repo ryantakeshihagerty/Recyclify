@@ -12,6 +12,7 @@
         android:layout_height="wrap_content">
 
         <TextView
+            android:id="@+id/SubmissionText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="serif-monospace"
@@ -28,7 +29,7 @@
             android:layout_marginEnd="0dp"
             android:onClick="showPopup"
             android:src="@drawable/ic_menu"
-            android:text="Menu" />
+            android:text="@string/menu_button_text" />
 
     </RelativeLayout>
 
@@ -52,14 +53,15 @@
 
     <EditText
         android:id="@+id/editTextMoney"
-        android:layout_marginTop="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:hint="$0.00"
+        android:layout_marginTop="30dp"
+        android:digits="0123456789."
         android:ems="10"
-        android:inputType="textPersonName"
-        android:importantForAutofill="no" />
+        android:hint="@string/defaultMoneyHint"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal" />
 
     <Button
         android:id="@+id/submitButton"

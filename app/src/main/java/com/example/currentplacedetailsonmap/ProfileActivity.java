@@ -11,6 +11,11 @@ public class ProfileActivity extends Activity implements PopupMenu.OnMenuItemCli
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        getProfileValues();
+    }
+
+    private void getProfileValues() {
     }
 
     public void showPopup(View v) {

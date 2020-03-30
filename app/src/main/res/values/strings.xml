@@ -18,4 +18,8 @@
     <string name="moneyMade_text">Money Made</string>
     <string name="total_text">Total:</string>
     <string name="fromLastTrip_text">From Last Trip:</string>
+    <string name="rank_text">Rank</string>
+    <string name="tripsMade_text">Trips made</string>
+    <string name="weeklyStreak_text">Weekly Streak</string>
+    <string name="defaultMoneyHint">$0.00</string>
 </resources>

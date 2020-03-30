@@ -52,7 +52,6 @@ public class ShareActivity extends Activity implements PopupMenu.OnMenuItemClick
                 InsertData(userID, time, plantName, moneyMade);
             }
         });
-
     }
 
     public void showPopup(View v) {
@@ -86,7 +85,8 @@ public class ShareActivity extends Activity implements PopupMenu.OnMenuItemClick
     }
 
     private String getUserID() {
-        return "FakeName"; //RETURN CURRENT USERID (OR USER's PHONE#)
+        // get user's userID or phone#?
+        return "FakeName";
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -97,12 +97,14 @@ public class ShareActivity extends Activity implements PopupMenu.OnMenuItemClick
     }
 
     private String getPlantName() {
-        return "My Local Recycling Plant"; // USE GPS TO FIND NEAREST PLANT
+        // use find place to find nearest recycling center
+        // get name of that recycling center from returned json string/object
+        // return name
+        return "My Local Recycling Plant";
     }
 
     private String getMoneyMade() {
         String moneyMade = moneyInput.getText().toString();
-        // CHECK THAT USER ENTERED VALID INPUT HERE
         return moneyMade;
     }
 
