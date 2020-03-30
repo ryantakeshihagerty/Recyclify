@@ -6,9 +6,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.PopupMenu;
+import android.widget.SimpleAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -18,15 +18,20 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 public class LeaderboardActivity extends Activity implements PopupMenu.OnMenuItemClickListener {
-    ListView listView;
+    ListView listViewLB;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leaderboard);
 
-        listView = findViewById(R.id.listView);
+        listViewLB = findViewById(R.id.listViewLB);
         downloadJSON("https://ineedtophp.000webhostapp.com/view_leaderboard.php");
     }
 
@@ -91,14 +96,25 @@ public class LeaderboardActivity extends Activity implements PopupMenu.OnMenuIte
 
     private void loadIntoListView(String jsonString) throws JSONException {
         JSONArray jsonArray = new JSONArray(jsonString);
-        String[] output = new String[jsonArray.length()];
+        HashMap<String, String> lbData = new HashMap<>();
         int rank = 1;
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject json = jsonArray.getJSONObject(i);
-            output[i] = "#" + rank + " " + json.getString("User") + " $" + json.getString("TotalMoneyMade");
+            lbData.put("#" + rank + " " + json.getString("User") + " $" + json.getString("TotalMoneyMade"), "last seen at " + json.getString("LastVisited"));
             rank++;
         }
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, output);
-        listView.setAdapter(arrayAdapter);
+
+        List<HashMap<String, String>> lbList = new ArrayList<>();
+        SimpleAdapter adapter = new SimpleAdapter(this, lbList, R.layout.list_item, new String[]{"First Line", "Second Line"}, new int[]{R.id.text1, R.id.text2});
+
+        Iterator it = lbData.entrySet().iterator();
+        while (it.hasNext()) {
+            HashMap<String, String> rsMap = new HashMap<>();
+            Map.Entry pair = (Map.Entry) it.next();
+            rsMap.put("First Line", pair.getKey().toString());
+            rsMap.put("Second Line", pair.getValue().toString());
+            lbList.add(rsMap);
+        }
+        listViewLB.setAdapter(adapter);
     }
 }
