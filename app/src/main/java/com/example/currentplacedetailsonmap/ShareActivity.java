@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -59,6 +60,12 @@ public class ShareActivity extends Activity implements PopupMenu.OnMenuItemClick
         popup.setOnMenuItemClickListener((PopupMenu.OnMenuItemClickListener) this);
         popup.inflate(R.menu.share_menu);
         popup.show();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.share_menu, menu);
+        return true;
     }
 
     @Override

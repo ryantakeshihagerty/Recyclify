@@ -21,6 +21,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -38,7 +39,7 @@ public class LeaderboardActivity extends Activity implements PopupMenu.OnMenuIte
     public void showPopup(View v) {
         PopupMenu popup = new PopupMenu(this, v);
         popup.setOnMenuItemClickListener((PopupMenu.OnMenuItemClickListener) this);
-        popup.inflate(R.menu.profile_menu);
+        popup.inflate(R.menu.leaderboard_menu);
         popup.show();
     }
 
@@ -96,7 +97,7 @@ public class LeaderboardActivity extends Activity implements PopupMenu.OnMenuIte
 
     private void loadIntoListView(String jsonString) throws JSONException {
         JSONArray jsonArray = new JSONArray(jsonString);
-        HashMap<String, String> lbData = new HashMap<>();
+        LinkedHashMap<String, String> lbData = new LinkedHashMap<>();
         int rank = 1;
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject json = jsonArray.getJSONObject(i);

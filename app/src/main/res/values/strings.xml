@@ -10,6 +10,9 @@
     <string name="user_text">User</string>
     <string name="last_visited_text">Last visited</string>
     <string name="total_earnings_text">Total earnings</string>
-    <string name="profile"></string>
+    <string name="profile">Profile</string>
+    <string name="leaderboard_text">Leaderboard</string>
     <string name="username"></string>
+    <string name="menu_button_text">Menu</string>
+    <string name="submission_text">Submission</string>
 </resources>
