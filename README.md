@@ -19,7 +19,3 @@ More
 -------
 
 More to come soon.
-
-I promise.
-
-![Analytics](https://ga-beacon.appspot.com/UA-12846745-20/android-samples-apidemos/readme?pixel)
