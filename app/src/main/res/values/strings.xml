@@ -15,4 +15,7 @@
     <string name="username"></string>
     <string name="menu_button_text">Menu</string>
     <string name="submission_text">Submission</string>
+    <string name="moneyMade_text">Money Made</string>
+    <string name="total_text">Total:</string>
+    <string name="fromLastTrip_text">From Last Trip:</string>
 </resources>

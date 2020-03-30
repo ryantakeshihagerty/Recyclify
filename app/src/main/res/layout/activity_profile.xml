@@ -174,11 +174,11 @@
     </LinearLayout>
 
     <TextView
-        android:layout_marginTop="36dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
         android:fontFamily="sans-serif"
-        android:text="Money Made"
+        android:text="@string/moneyMade_text"
         android:textColor="#4B4B4B"
         android:textSize="24sp"
         tools:ignore="RelativeOverlap" />
@@ -196,11 +196,12 @@
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="100dp">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"
-                android:text="Total:"
+                android:text="@string/total_text"
                 android:textColor="#4B4B4B"
                 android:textSize="20sp"
                 tools:ignore="RelativeOverlap" />
@@ -229,7 +230,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"
-                android:text="From Last Trip:"
+                android:text="@string/fromLastTrip_text"
                 android:textColor="#4B4B4B"
                 android:textSize="20sp"
                 tools:ignore="RelativeOverlap" />
