@@ -94,6 +94,8 @@ public class MapsActivityCurrentPlace extends AppCompatActivity implements OnMap
 
     private ArrayList<String> mList;
 
+    public int numOfListings = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -298,14 +300,11 @@ public class MapsActivityCurrentPlace extends AppCompatActivity implements OnMap
         updateLocationUI();
     }
 
-    /**
-     * Prompts the user to select the current place from a list of likely places, and shows the
-     * current place on the map - provided the user has granted location permission.
-     */
-    private void showCurrentPlace() {
+   private void showCurrentPlace() {
         if (mMap == null) {
             return;
         }
+        mList = new ArrayList<String>();
 
         if(mLocationPermissionGranted) {
             getListOfRecyclePlants();
@@ -329,12 +328,14 @@ public class MapsActivityCurrentPlace extends AppCompatActivity implements OnMap
                     //boolean is = task.isSuccessful();
                     //boolean is = task.getResult()!=null;
                     //System.out.println(isss);
-                    if (task.isSuccessful() && task.getResult() != null) {
+                    if (task.isSuccessful() && task.getResult() != null && mList != null) {
                         FindCurrentPlaceResponse likelyPlaces = task.getResult();
 
 
                         List<List<String>> centers = parseArrayList();
-                        int sz = centers.get(0).size();
+
+                        numOfListings = centers.get(0).size();
+                        int sz = numOfListings;
                         mLikelyPlaceNames = new String[sz];
                         mLikelyPlaceAddresses = new String[sz];
                         mLikelyPlaceAttributions = new List[sz];
@@ -373,11 +374,12 @@ public class MapsActivityCurrentPlace extends AppCompatActivity implements OnMap
             // Prompt the user for permission.
             getLocationPermission();
         }
+
     }
-    private List<List<String>> parseArrayList()
+     private List<List<String>> parseArrayList()
     {
         CharSequence name = "name";
-        CharSequence address = "formatted_address";
+        CharSequence address = "vicinity";//"formatted_address";
         CharSequence loc = "location";
         List<List<String>> rtr = new ArrayList<List<String>>();
         ArrayList<String> n = new ArrayList<String>();
@@ -403,8 +405,8 @@ public class MapsActivityCurrentPlace extends AppCompatActivity implements OnMap
             {
                 int lt = mList.get(i+1).indexOf(':');
                 int lg = mList.get(i+2).indexOf(':');
-                la.add(mList.get(i+1).substring(lt+1,lt+9));
-                lo.add(mList.get(i+2).substring(lg+1,lg+9));
+                la.add(mList.get(i+1).substring(lt+1,lt+11));
+                lo.add(mList.get(i+2).substring(lg+1,lg+11));
             }
         }
         rtr.add(n);
@@ -439,13 +441,15 @@ public class MapsActivityCurrentPlace extends AppCompatActivity implements OnMap
                         String line;
                         while ((line = br.readLine()) != null) {
                             dat.add(line);
+                            mList.add(line);
+                            count++;
                             //out.append(line);
                         }
                         mList = dat;
                         //String jsonStr = out.toString();
                         //System.out.println(jsonStr);   //Prints the string content read from input stream
-                        for (int i = 0; i < dat.size(); i++) {
-                            System.out.println(dat.get(i));
+                        for (int i = 0; i < mList.size(); i++) {
+                            System.out.println(mList.get(i));
                         }
 
                         br.close();
@@ -478,23 +482,24 @@ public class MapsActivityCurrentPlace extends AppCompatActivity implements OnMap
         //System.out.println(currentLoc);
         String locBias = "&locationbias=circle:2000@"+pos;
         String radius = "&radius=50000";
-        String keyword = "&keyword=recycle@20center";
+
 
         String fields = "&fields=photos,formatted_address,name,rating,opening_hours,geometry";
         String rankby = "&rankby=distance";
 
         //text search
         String query ="query=recycling+recycle+center+plant+near+me";
-        String base = "https://maps.googleapis.com/maps/api/place/textsearch/json?";
-        return base+query+currentLoc+radius+yourKey;
+        //String base = "https://maps.googleapis.com/maps/api/place/textsearch/json?";
+        //return base+query+currentLoc+radius+yourKey;
 
         //nearbySearch
-        //String base = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?";
-        //return base+currentLoc+radius+keyword+yourKey;
+        String keyword = "&keyword=recycling+center+recycle";
+        String base = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?";
+        return base+currentLoc+rankby+keyword+yourKey;
 
         //find place
         //String base = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?";
-        //return base+name+inputtype+fields+locBias+yourKey;
+        //return base+name+inputtype+fields+yourKey;
     }
 
     /**
