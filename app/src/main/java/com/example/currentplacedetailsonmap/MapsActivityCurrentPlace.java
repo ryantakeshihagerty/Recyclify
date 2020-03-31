@@ -94,6 +94,8 @@ public class MapsActivityCurrentPlace extends AppCompatActivity implements OnMap
 
     private ArrayList<String> mList;
 
+    public int numOfListings = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
